@@ -31,8 +31,8 @@ class Wrapper
         $this->config = $config;
 
         // Retrieve the configuration variables
-        $apiKey = $this->config->get('packagename::api_key');
-        $apiSecret = $this->config->get('packagename::api_secret');
+        $apiKey = $this->config->get('packagename.api_key');
+        $apiSecret = $this->config->get('packagename.api_secret');
 
         // Make the client instance
         //$this->client = new WrappedClient($apiKey, $apiSecret);

@@ -33,8 +33,6 @@ class PackageServiceProvider extends LaravelServiceProvider {
         $this->app['packagename'] = $this->app->share(function($app) {
             return new Wrapper($app['config']);
         });
-
-        $this->app->alias('MyFacade', 'Vendor\Package\Facades\Wrapper');
     }
 
     /**
