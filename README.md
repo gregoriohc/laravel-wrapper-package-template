@@ -1,6 +1,7 @@
 # Laravel 5 Wrapper Package Template
 
 Based on https://github.com/cviebrock/laravel5-package-template
+
 See an example of use on https://github.com/gregoriohc/laravel-trello
 
 ## Installation
@@ -32,13 +33,13 @@ Edit `composer.json` to reflect your package information.  At a minimum, you wil
 ```json
 {
     "name": "vendor/package",
-    ...
+    //...
     "autoload": {
         "psr-4": {
             "Vendor\\Package\\": "src/"
         }
     },
-    ...
+    //...
 },
 ```
 
@@ -60,11 +61,11 @@ Rename `src/PackageServiceProvider.php` replacing `Package` for your own package
 In the `register()` method, change the "packagename" app array index to your package name and also the "MyFacade" alias to the name of the Facade you want to use to access your wrapper:
 
 ```php
-...
+//...
 $this->app['packagename'] = $this->app->share(function($app)
-...
+//...
 $this->app->alias('MyFacade', 'Vendor\Package\Facades\Wrapper');
-...
+//...
 ```
 
 In the `handleConfigs()` method, you'll want to change the "packagename" references to the name you chose up above (in the [config/packagename.php] instructions).
@@ -75,9 +76,9 @@ In the `handleConfigs()` method, you'll want to change the "packagename" referen
 In the `getFacadeAccessor()` method, change the "packagename" to the one you previously used for the app array index on the `register()` method:
 
 ```php
-...
+//...
 protected static function getFacadeAccessor() { return 'packagename'; }
-...
+//...
 ```
 
 
