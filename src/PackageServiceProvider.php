@@ -30,8 +30,7 @@ class PackageServiceProvider extends LaravelServiceProvider {
      */
     public function register() {
 
-        $this->app['packagename'] = $this->app->share(function($app)
-        {
+        $this->app['packagename'] = $this->app->share(function($app) {
             return new Wrapper($app['config']);
         });
 

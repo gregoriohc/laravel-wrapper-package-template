@@ -33,13 +33,13 @@ Edit `composer.json` to reflect your package information.  At a minimum, you wil
 ```json
 {
     "name": "vendor/package",
-    //...
+
     "autoload": {
         "psr-4": {
             "Vendor\\Package\\": "src/"
         }
     },
-    //...
+
 },
 ```
 
@@ -62,8 +62,10 @@ In the `register()` method, change the "packagename" app array index to your pac
 
 ```php
 //...
-$this->app['packagename'] = $this->app->share(function($app)
-//...
+$this->app['packagename'] = $this->app->share(function($app) {
+    return new Wrapper($app['config']);
+});
+
 $this->app->alias('MyFacade', 'Vendor\Package\Facades\Wrapper');
 //...
 ```
